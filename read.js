@@ -23,7 +23,7 @@ function ChunkStoreReadStream (store, chunkLength, opts) {
 
   this._store = store
   this._chunkLength = chunkLength
-  this._index = 0
+  this._index = opts.startIndex || 0
 }
 
 ChunkStoreReadStream.prototype._read = function () {
