@@ -30,6 +30,7 @@ function ChunkStoreWriteStream (store, chunkLength, opts) {
   function onData (chunk) {
     if (self.destroyed) return
     store.put(index, chunk)
+    self.emit('chunk', index)
     index += 1
   }
 
